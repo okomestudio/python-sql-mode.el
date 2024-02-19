@@ -26,8 +26,11 @@
   "Call out to `sql-send-region' with the polymode chunk region."
   (sql-send-region beg end))
 
-;;;###autoload
-(define-polymode python-sql-mode
+;;;###autoload (autoload 'python-sql-mode "python-sql-mode")
+(define-polymode python-sql-base-mode)
+
+;;;###autoload (autoload 'python-sql-mode "python-sql-mode")
+(define-polymode python-sql-mode python-sql-base-mode
   :hostmode 'python-sql-hostmode
   :innermodes '(python-sql-innermode)
 
@@ -35,8 +38,8 @@
   (define-key python-sql-mode-map
               (kbd "C-c C-c") 'polymode-eval-chunk))
 
-;;;###autoload
-(define-polymode python-sql-ts-mode
+;;;###autoload (autoload 'python-sql-mode "python-sql-mode")
+(define-polymode python-sql-ts-mode python-sql-base-mode
   :hostmode 'python-sql-ts-hostmode
   :innermodes '(python-sql-innermode)
 
