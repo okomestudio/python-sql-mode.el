@@ -17,7 +17,7 @@
 
 (define-innermode python-sql-innermode
   :mode 'sql-mode
-  :head-matcher "\"\\{3\\}--[[:blank:]]*\\(sql\\|SQL\\)"
+  :head-matcher "\\(sql[[:alnum:]_]*[[:blank:]]?=[[:blank:]]?\"\\{3\\}\\|\"\\{3\\}--[[:blank:]]*\\(sql\\|SQL\\)\\)"
   :tail-matcher "\"\\{3\\}"
   :head-mode 'host
   :tail-mode 'host)
